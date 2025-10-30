@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #001F3F; /* Moonlight Dark Blue */
+}
+.follower {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    pointer-events: none;
+    border-radius: 50%;
+    animation-name: follower_animation;
+    animation-duration: 0.8s;
+}
+
+@keyframes follower_animation {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    } 
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+#contact h2 {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+#contact {
+    text-align: center;
+}
+
+#contact .contact-info {
+    text-align: center;
+    margin-top: 20px; /* Add some space between the heading and contact info */
+}
+@keyframes borderAnimation {
+    0% {
+      border-color: #3498db; /* Initial color */
+      border-width: 2px;
+    }
+    50% {
+      border-color: #e74c3c; /* Midpoint color */
+      border-width: 8px;
+    }
+    100% {
+      border-color: #2ecc71; /* Final color */
+      border-width: 2px;
+    }
+  }
+  
+  .animated-border {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #3498db; /* Initial border color */
+    animation: borderAnimation 3s infinite; /* Run the animation */
+  }
+  
+
+
+
+
+
+

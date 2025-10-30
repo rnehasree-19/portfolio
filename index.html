@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of R Neha Sree — An Aspiring Computer Vision Developer | AI Developer.">
+  <title>R Neha Sree | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== GLOBAL STYLES ====== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #1B263B;
+      color: #E0FBFC;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
+    section {
+      padding: 100px 20px;
+      margin: 60px 0;
+      text-align: center;
+      font-size: 20px;
+      min-height: 100vh;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====== NAVBAR ====== */
+    nav {
+      background-color: #1B263B;
+      padding: 25px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: #E0FBFC;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 25px;
+      border: 2px solid #E0FBFC;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #A8DADC;
+      color: #1B263B;
+    }
+
+    /* ====== TOP CONTAINER ====== */
+    .top-container {
+      display: flex;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .profile-pic-container {
+      flex-shrink: 0;
+      width: 200px;
+      height: 270px;
+      border-radius: 50% / 40%;
+      overflow: hidden;
+      border: 3px solid #A8DADC;
+      box-shadow: 0 0 15px rgba(160, 200, 255, 0.3);
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .main-content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    /* ====== HOME SECTION ====== */
+    #home {
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    #home h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    #home h2 {
+      font-size: 26px;
+      font-weight: normal;
+      color: #A8DADC;
+    }
+
+    #projects .project-card {
+  display: block;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+  color: #E0FBFC;
+  font-weight: normal;
+  background-color: #1B263B;
+  padding: 20px 25px;
+  border: 2px solid #A8DADC;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(168, 218, 220, 0.2);
+  transition: all 0.3s ease;
+}
+
+#projects .project-card:hover {
+  background-color: #A8DADC;
+  color: #1B263B;
+  transform: translateY(-5px);
+}
+
+
+    /* ====== SKILLS ====== */
+    .skills {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .skills a {
+      display: block;
+      margin: 12px 0;
+      text-decoration: none;
+      color: #E0FBFC;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 30px;
+      width: 250px;
+      border: 2px solid #E0FBFC;
+      border-radius: 5px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .skills a:hover {
+      background-color: #A8DADC;
+      color: #1B263B;
+    }
+    /* ====== EXPERIENCE ====== */
+#experience .timeline-item {
+  text-align: left;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #1B263B;
+  border: 2px solid #A8DADC;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(168, 218, 220, 0.2);
+  transition: all 0.3s ease;
+}
+
+#experience .timeline-item:hover {
+  background-color: #A8DADC;
+  color: #1B263B;
+  transform: translateY(-5px);
+}
+
+#experience h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+#experience p {
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+    /* ====== EDUCATION ====== */
+    .timeline {
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline-item {
+      background-color: #1B263B;
+      border: 2px solid #A8DADC;
+      border-radius: 8px;
+      padding: 20px;
+      width: 80%;
+      margin: 12px 0;
+      box-shadow: 0 0 10px rgba(168, 218, 220, 0.2);
+    }
+
+    .timeline-item h3 {
+      font-size: 22px;
+    }
+
+    .timeline-item span {
+      color: #A8DADC;
+      font-size: 15px;
+    }
+
+    /* ====== CONTACT ====== */
+    .contact-info {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .contact-info a {
+      color: #A8DADC;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #E0FBFC;
+    }
+
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      margin: 10px;
+      text-decoration: none;
+      color: #E0FBFC;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 25px;
+      border: 2px solid #E0FBFC;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background-color: #A8DADC;
+      color: #1B263B;
+    }
+
+    /* ====== ABOUT SECTION ====== */
+    #about button {
+      background: transparent;
+      border: 2px solid #E0FBFC;
+      color: #E0FBFC;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #about button:hover {
+      background-color: #A8DADC;
+      color: #1B263B;
+    }
+
+    /* ====== MOUSE FOLLOWER ====== */
+    .follower {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .top-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      .profile-pic-container {
+        width: 160px;
+        height: 200px;
+      }
+
+      #home h1 {
+        font-size: 32px;
+      }
+
+      #home h2 {
+        font-size: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="main-content">
+
+      <!-- NAVIGATION -->
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- HOME -->
+      <section id="home">
+        <div class="top-container">
+          <div class="profile-pic-container">
+            <img src="profile_image.jpeg" alt="Profile Picture" class="profile-pic">
+          </div>
+        </div>
+        <h1>I am R Neha Sree</h1>
+        <h2>An Aspiring Computer Vision Developer | AI Developer</h2>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h2>Projects</h2>
+	<a href="https://github.com/rnehasree/Data_Analysis" target="_blank" class="project-card">
+          Data Analysis<br>
+        •	Performed data analysis and visualization using NumPy, Pandas, and Matplotlib.<br>
+        •	Explored and manipulated large datasets for data science and business intelligence tasks.<br>
+        •	Conducted the Maven MegaMart case study analyzing over 2 million transactions.<br>
+        •	Calculated KPIs, visualized trends, and provided insights into sales and discounts.<br>
+        •	Set up and ran Jupyter Notebooks in VS Code using a custom Python virtual environment.<br>
+
+        </a><br>
+        <a href="https://github.com/rnehasree/hand-gestures" target="_blank" class="project-card">
+          Hand Gesture Recognition <br>
+            •	Developed a real-time hand gesture recognition system using MediaPipe and OpenCV.<br>
+            •	Implemented MLP models (TensorFlow) for hand sign and finger gesture classification.<br>
+            •	Includes training notebooks for custom gesture data and pre-trained TFLite models.<br>
+            •	Supports webcam-based gesture detection, training, and live inference.<br>
+            •	Useful for gesture-controlled interfaces and human–computer interaction research.<br>
+
+        </a><br>
+        <a href="https://github.com/rnehasree/remove-background" target="_blank" class="project-card">
+          Background Removal  <br>
+            •	Built a real-time background changer using OpenCV and Python.<br>
+            •	Allows switching between different background images dynamically.<br>
+            •	Adjustable webcam input and resolution for better compatibility.<br>
+            •	Useful for apps like Zoom or Microsoft Teams.<br>
+            •	Supports keyboard controls — press ‘a’ or ‘d’ to change backgrounds, ‘q’ to quit<br>
+
+
+        </a><br>
+        <a href="https://github.com/rnehasree/hand-gestures" target="_blank" class="project-card">
+          Face Detection  <br>
+            •	Implemented face detection using Haar and LBP Cascade Classifiers in OpenCV.<br>
+            •	Compared both methods in terms of accuracy and speed.<br>
+            •	Visualized results using Matplotlib for better analysis.<br>
+            •	Demonstrated practical understanding of image processing and computer vision concepts.<br>
+
+
+        </a><br>
+        <a  class="project-card">
+          Jervis AI(Ongoing)
+        </a><br>
+        <a  class="project-card">
+          Daycare Robot(Ongoing)
+        </a>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+          <a>Python</a>
+          <a>Numpy</a>
+          <a>Pandas</a>
+          <a>Matplotlib</a>
+          <a>Image Processing</a>
+          <a>OpenCV</a>
+        </div>
+      </section>
+      <!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Student Placement Coordinator — Jyothy Institute of Technology</h3>
+      <p><span>Sept 2025 - Present</span></p>
+      <p>
+        • Coordinating placement-related activities and opportunities for my batch.<br>
+        • Assisting peers with resumes, mock interviews, and career guidance.<br>
+        • Organizing workshops and industry interactions to enhance placement readiness.<br>
+        • Developing leadership, collaboration, and communication skills through coordination tasks.
+      </p>
+    </div>
+  </div>
+</section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+	  <div class="timeline-item">
+            <h3>BE - Jyothy Institute of Technology</h3>
+            <p><span>2024 - Present</span></p>
+          </div>
+	 <div class="timeline-item">
+            <h3>Intermediate - LRG Naidu Junior College</h3>
+            <p><span>2022 - 2024</span></p>
+          </div>
+          <div class="timeline-item">
+            <h3>10th - LRG Vidyalayam</h3>
+            <p><span>2021 - 2022</span></p>
+          </div>
+          
+          
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>For collaboration, you can reach me at:</p>
+        <div class="contact-info">
+          <p>Phone: <a href="tel:+917013135012">+91 70131 35012</a></p>
+          <p>Email: <a href="mailto:rnehasree@gmail.com">rnehasree@gmail.com</a></p>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/nehasree-r-55a22a308/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/rnehasree" target="_blank">GitHub</a>
+        </div>
+      </section>
+
+    </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const colors = ["#1B263B", "#415A77", "#778DA9", "#A8DADC", "#E0FBFC", "#98C1D9", "#3D5A80"];
+    let i = 0, lastTime = 0;
+
+    document.onmousemove = function(e) {
+      const now = Date.now();
+      if (now - lastTime < 20) return;
+      lastTime = now;
+      i++;
+
+      let x = e.pageX, y = e.pageY;
+      let span = document.createElement("span");
+      span.classList.add("follower");
+      span.style.top = y + "px";
+      span.style.left = x + "px";
+      span.style.backgroundColor = colors[i % colors.length];
+      document.body.appendChild(span);
+
+      setTimeout(() => span.remove(), 1000);
+    };
+  </script>
+
+</body>
+</html>
